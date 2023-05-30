@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import '../App.css';
+import { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import "../App.css";
 
 export default function Layout() {
 
@@ -13,29 +13,29 @@ export default function Layout() {
     return (
         <>
             <header>
-                <div className='nav-mobile'>
+                <div className="nav-mobile">
                     <button onClick={handleButtonClick}>
-                        {mobileMenu ? (<i className='bx bx-x'></i>) : (<i className='bx bx-menu'></i>)}
+                        {mobileMenu ? (<i className="bx bx-x"></i>) : (<i className="bx bx-menu"></i>)}
                     </button>
                 </div>
-                <nav className='nav'>
-                    <div className='nav-container'>
-                        <div className='nav-logo'>
-                            <img className='nav-logo_img' alt='Logo' src='/logolfc.png' width='80' />
+                <nav className="nav">
+                    <div className="nav-container">
+                        <div className="nav-logo">
+                            <img className="nav-logo_img" alt="Logo" src="/logolfc.png" width="80" />
                         </div>
-                        <ul className={`nav-menu ${mobileMenu ? 'show' : ''}`}>
+                        <ul className={`nav-menu ${mobileMenu ? "show" : ""}`}>
                             <li>
-                                <Link className='nav-item' to='/'>
+                                <Link className="nav-item" to="/" onClick={handleButtonClick}>
                                     Home
                                 </Link>
                             </li>
                             <li>
-                                <Link className='nav-item' to='/about'>
+                                <Link className="nav-item" to="/about" onClick={handleButtonClick}>
                                     Acerca de
                                 </Link>
                             </li>
                             <li>
-                                <Link className='nav-item' to='/'>
+                                <Link className="nav-item" to="/" onClick={handleButtonClick}>
                                     Contacto
                                 </Link>
                             </li>
@@ -43,7 +43,9 @@ export default function Layout() {
                     </div>
                 </nav>
             </header>
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </>
     )
 }
